@@ -16,13 +16,20 @@ namespace Console_App_W01
             string location = Console.ReadLine();
 
             // 3. Display both variables with proper labels
-            Console.WriteLine($"Your name is: {firstName}, and you are from {location}");
+            Console.WriteLine($"Your name is {firstName}, and you are from {location}");
 
             // 4. Output current date, but not the time.
             DateTime today = DateTime.Now;
             Console.WriteLine("Today is " + today.ToString("D"));
 
-            // 6. Imported Rob Miles window frame code
+            // 5. Output number of days until Christmas, using today's year
+            string nextChristmas = "12/25/" + today.Year;
+            DateTime Christmas = DateTime.Parse(nextChristmas);
+
+            // This method will cause issues on the last week of December, could account for this with an if statement
+            Console.WriteLine("We have " + (Christmas - today).Days + " days until Christmas!");
+
+            // 6. Imported Rob Miles window frame code, start with initializing variables
             double width, height, woodLength, glassArea;
             string widthString, heightString;
 
